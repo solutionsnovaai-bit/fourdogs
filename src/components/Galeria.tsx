@@ -1,3 +1,4 @@
+import CarrosselFotos from './CarrosselFotos'
 import { LOJA } from '../loja'
 import { Pata } from './Icones'
 import { Titulo } from './Reveal'
@@ -18,9 +19,9 @@ export default function Galeria() {
         <span className="sobretitulo"><Pata />Galeria</span>
         <Titulo linhas={['Quem passou por aqui']} destaque="saiu de visual novo." className="h2" />
       </header>
-      <ul className="amor-fotos" aria-label="Fotos dos cães atendidos">
+      <CarrosselFotos>
         {FOTOS.map(([id, alt]) => <li key={id}><img src={`/amor/pet-${id}.webp`} width={480} height={640} alt={alt} loading="lazy" decoding="async" /></li>)}
-      </ul>
+      </CarrosselFotos>
       <a className="link" href={LOJA.instagram} target="_blank" rel="noopener noreferrer">Veja mais no Instagram</a>
     </div>
   </section>

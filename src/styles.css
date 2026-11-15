@@ -511,14 +511,19 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .amor-logo-hero { width: min(72%, 320px); height: auto; margin-top: -42px; position: relative; padding: 14px 20px; border-radius: 22px; background: white; box-shadow: 0 14px 32px #18575722; }
 .marca-topo { width: min(196px, calc((var(--topo-h) - 12px) * 2)); height: auto; object-fit: contain; }
 .marca-rodape { background: white; padding: 10px; border-radius: 16px; }
-.amor-fotos { list-style: none; padding: 0; margin: 0 0 24px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
-.amor-fotos img { display: block; width: 100%; height: auto; border-radius: 18px; }
 @media (max-width: 960px) {
   .amor-visual { width: min(100%, 410px); justify-self: center; }
   .amor-retrato { width: min(68%, 270px); }
   .amor-logo-hero { width: min(60%, 230px); }
-  .amor-fotos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 560px) {
-  .amor-fotos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 }
+
+.carrossel-pets { max-width: 980px; margin: 0 auto 22px; }
+.carrossel-pets-acoes { display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 12px; }
+.carrossel-pets-acoes button { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--principal); border-radius: 50%; background: var(--papel); color: var(--principal-escuro); cursor: pointer; }
+.carrossel-pets-acoes button:hover { background: var(--principal-claro); }
+.carrossel-pets-acoes svg { width: 18px; height: 18px; }
+.carrossel-pets-trilho { position: relative; display: flex; gap: 14px; align-items: flex-start; overflow-x: auto; scroll-snap-type: x mandatory; list-style: none; margin: 0; padding: 4px 0 12px; scrollbar-width: thin; }
+.carrossel-pets-trilho > li { flex: 0 0 clamp(145px, 42vw, 180px); scroll-snap-align: start; }
+.carrossel-pets-trilho img { display: block; width: 100%; height: auto; border-radius: 18px; }
