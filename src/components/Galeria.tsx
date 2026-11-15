@@ -20,8 +20,9 @@ export default function Galeria() {
         <Titulo linhas={['Quem passou por aqui']} destaque="saiu de visual novo." className="h2" />
       </header>
       <CarrosselFotos>
-        {FOTOS.map(([id, alt]) => <li key={id}><img src={`/amor/pet-${id}.webp`} width={480} height={640} alt={alt} loading="lazy" decoding="async" /></li>)}
+        {FOTOS.map(([id, alt]) => <li key={id}><img src={`/amor/galeria-recriada/${id}.webp`} width={506} height={506} alt={alt} loading="lazy" decoding="async" /></li>)}
       </CarrosselFotos>
+      <p>Retratos recriados a partir das fotos dos cães.</p>
       <a className="link" href={LOJA.instagram} target="_blank" rel="noopener noreferrer">Veja mais no Instagram</a>
     </div>
   </section>
