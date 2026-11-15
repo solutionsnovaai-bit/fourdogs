@@ -508,3 +508,22 @@ button { font: inherit; color: inherit; cursor: pointer; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
 }
 .movimento-pausado *, .movimento-pausado *::before, .movimento-pausado *::after { animation-play-state: paused !important; }
+
+.amor-hero { background: linear-gradient(150deg, #e0f6f4, #fff8fa 75%); }
+.amor-hero h1 span { color: var(--principal-escuro); }
+.amor-visual { grid-area: visual; display: grid; justify-items: center; position: relative; padding: 0 0 28px; }
+.amor-retrato { width: min(78%, 392px); aspect-ratio: 4 / 4.5; object-fit: cover; object-position: center 44%; border: 8px solid white; border-radius: 34px; transform: rotate(4deg); box-shadow: 0 16px 45px #18575726; }
+.amor-logo-hero { width: min(72%, 320px); height: auto; margin-top: -42px; position: relative; padding: 14px 20px; border-radius: 22px; background: white; box-shadow: 0 14px 32px #18575722; }
+.marca-topo { width: clamp(105px, 17vw, 146px); height: auto; max-height: calc(var(--topo-h) - 12px); object-fit: contain; }
+.marca-rodape { background: white; padding: 10px; border-radius: 16px; }
+.amor-fotos { list-style: none; padding: 0; margin: 0 0 24px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+.amor-fotos img { display: block; width: 100%; height: auto; border-radius: 18px; }
+@media (max-width: 960px) {
+  .amor-visual { width: min(100%, 410px); justify-self: center; }
+  .amor-retrato { width: min(68%, 270px); }
+  .amor-logo-hero { width: min(60%, 230px); }
+  .amor-fotos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .amor-fotos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+}
