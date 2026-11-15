@@ -12,7 +12,7 @@
   --mola: cubic-bezier(.34, 1.56, .64, 1);
   --gutter: clamp(18px, 4.4vw, 64px);
   --raio: 28px;
-  --topo-h: 76px;
+  --topo-h: 110px;
   --faixa-h: 38px;
   --madeira-veio: url('/texturas/madeira.webp');
   --sombra-cartao: 0 1px 0 rgba(59, 35, 20, .04), 0 22px 44px -26px rgba(59, 35, 20, .42);
@@ -77,22 +77,17 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .abertura { position: fixed; inset: 0; z-index: 400; perspective: 2200px; pointer-events: auto; }
 .abertura.is-abrindo { pointer-events: none; }
 .porta { --tabua: clamp(38px, 4.6vw, 62px); position: absolute; top: 0; bottom: 0; width: 50.2%; backface-visibility: hidden; transition: transform 1.2s cubic-bezier(.66, 0, .22, 1) .2s; will-change: transform;
-  background:
-    linear-gradient(90deg, rgba(40, 6, 3, .28), rgba(40, 6, 3, 0) 9%, rgba(40, 6, 3, 0) 91%, rgba(40, 6, 3, .32)),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, .05) 0 2px, transparent 2px calc(var(--tabua) - 3px), rgba(60, 10, 6, .5) calc(var(--tabua) - 3px) var(--tabua)),
-    var(--madeira-veio),
-    var(--terceira); }
-.porta::after { content: ''; position: absolute; inset: 0; background: #1a0503; opacity: 0; transition: opacity 1.2s ease .2s; }
+  background: repeating-linear-gradient(90deg, transparent 0 calc(var(--tabua) - 1px), #eff0f1 calc(var(--tabua) - 1px) var(--tabua)), #fff;
+  box-shadow: inset 0 0 24px #36454f10; }
 .porta-esq { left: 0; transform-origin: left center; }
 .porta-dir { right: 0; transform-origin: right center; }
 .is-abrindo .porta-esq { transform: rotateY(-104deg); }
 .is-abrindo .porta-dir { transform: rotateY(104deg); }
-.is-abrindo .porta::after { opacity: .55; }
 .porta-desenho { position: absolute; inset: clamp(10px, 1.6vw, 22px); width: calc(100% - clamp(10px, 1.6vw, 22px) * 2); height: calc(100% - clamp(10px, 1.6vw, 22px) * 2); overflow: visible; }
 .porta-desenho path { fill: none; vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-linecap: square; }
-.porta-traves-sombra { stroke: rgba(50, 8, 4, .45); stroke-width: clamp(18px, 2.3vw, 30px); }
-.porta-traves { stroke: var(--porta-moldura); stroke-width: clamp(11px, 1.5vw, 20px); }
-.porta-macaneta { position: absolute; top: 50%; width: clamp(9px, 1vw, 14px); height: clamp(70px, 9vh, 110px); margin-top: calc(clamp(70px, 9vh, 110px) / -2); border-radius: 8px; background: linear-gradient(90deg, #2a2320, #5b504a 45%, #1d1714); box-shadow: 0 4px 10px rgba(0, 0, 0, .45); }
+.porta-traves-sombra { stroke: #e9ebed; stroke-width: clamp(18px, 2.3vw, 30px); }
+.porta-traves { stroke: #fff; stroke-width: clamp(11px, 1.5vw, 20px); }
+.porta-macaneta { position: absolute; top: 50%; width: clamp(9px, 1vw, 14px); height: clamp(70px, 9vh, 110px); margin-top: calc(clamp(70px, 9vh, 110px) / -2); border-radius: 8px; background: linear-gradient(90deg, #eff1f2, #fff 45%, #e6e9eb); box-shadow: 0 3px 9px #36454f2b; }
 .porta-esq .porta-macaneta { right: clamp(26px, 3.4vw, 50px); }
 .porta-dir .porta-macaneta { left: clamp(26px, 3.4vw, 50px); }
 .abertura-luz { position: absolute; inset: 0; opacity: 0; pointer-events: none; background: radial-gradient(60% 70% at 50% 45%, rgba(255, 243, 205, .95), rgba(255, 214, 120, .5) 45%, rgba(255, 214, 120, 0) 75%); }
@@ -435,8 +430,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 }
 
 @media (max-width: 900px) {
-  :root { --topo-h: 64px; --raio: 22px; }
-  html { scroll-padding-top: 90px; }
+  :root { --topo-h: 92px; --raio: 22px; }
+  html { scroll-padding-top: calc(var(--topo-h) + 26px); }
   .topo-barra { border-radius: 22px; padding: 0 8px 0 10px; }
   .faixa-topo-endereco { display: none !important; }
 
@@ -514,7 +509,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .amor-visual { grid-area: visual; display: grid; justify-items: center; position: relative; padding: 0 0 28px; }
 .amor-retrato { width: min(78%, 392px); aspect-ratio: 4 / 4.5; object-fit: cover; object-position: center 44%; border: 8px solid white; border-radius: 34px; transform: rotate(4deg); box-shadow: 0 16px 45px #18575726; }
 .amor-logo-hero { width: min(72%, 320px); height: auto; margin-top: -42px; position: relative; padding: 14px 20px; border-radius: 22px; background: white; box-shadow: 0 14px 32px #18575722; }
-.marca-topo { width: clamp(105px, 17vw, 146px); height: auto; max-height: calc(var(--topo-h) - 12px); object-fit: contain; }
+.marca-topo { width: min(196px, calc((var(--topo-h) - 12px) * 2)); height: auto; object-fit: contain; }
 .marca-rodape { background: white; padding: 10px; border-radius: 16px; }
 .amor-fotos { list-style: none; padding: 0; margin: 0 0 24px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
 .amor-fotos img { display: block; width: 100%; height: auto; border-radius: 18px; }
