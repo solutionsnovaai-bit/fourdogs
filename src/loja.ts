@@ -36,7 +36,7 @@ export const COMO_AGENDAR = {
   passos: [
     { titulo: 'Chame no WhatsApp', texto: 'Conte um pouco sobre o seu cão e diga se procura banho ou tosa.' },
     { titulo: 'Combine um horário', texto: 'Consulte os horários disponíveis e acerte os detalhes com a equipe.' },
-    { titulo: 'Traga seu cão', texto: 'No horário combinado, venha à Rua Luís Pinto, 530, na Vila Carrão.' },
+    { titulo: 'Hora de cuidar das patinhas', texto: 'No horário combinado, venha à Rua Luís Pinto, 530, na Vila Carrão.' },
   ],
   cta: 'Agendar pelo WhatsApp',
 }
